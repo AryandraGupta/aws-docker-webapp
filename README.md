@@ -1,4 +1,10 @@
-# 🐳Dockerized Web Application on AWS EC2
+# 🐳 Dockerized Web Application on AWS EC2
+
+![Docker](https://img.shields.io/badge/Docker-Containerized-blue?logo=docker&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-EC2-orange?logo=amazonaws&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-Ubuntu-yellow?logo=linux&logoColor=black)
+
+This project demonstrates deploying a containerized web application on AWS using Docker and EC2.
 
 This project demonstrates deploying a containerized web application on AWS using Docker and EC2.
 
