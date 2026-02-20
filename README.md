@@ -30,14 +30,14 @@ This project helped me understand:
 
 ## Screenshots
 
+### Website Live on AWS
+![Website Screenshot](screenshots/website.png)
+
 ### EC2 Instance Running
 ![EC2 Dashboard](screenshots/ec2-dashboard.png)
 
 ### Docker Container Running
 ![Docker PS Output](screenshots/docker-ps-output.png)
-
-### Website Live on AWS
-![Website Screenshot](screenshots/website.png)
 
 ### Dockerfile Used for Build
 ![Dockerfile](screenshots/Dockerfile.png)
