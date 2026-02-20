@@ -1,4 +1,4 @@
-# Dockerized Web Application on AWS EC2
+# 🐳Dockerized Web Application on AWS EC2
 
 This project demonstrates deploying a containerized web application on AWS using Docker and EC2.
 
