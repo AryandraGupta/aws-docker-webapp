@@ -28,19 +28,19 @@ This project helped me understand:
 - Networking and port mapping
 - Deployment lifecycle on AWS
 
--## Screenshots
+## Screenshots
 
 ### EC2 Instance Running
-![EC2 Dashboard](ec2-dashboard.png)
+![EC2 Dashboard](screenshots/ec2-dashboard.png)
 
 ### Docker Container Running
-![Docker PS Output](docker-ps-output.png)
+![Docker PS Output](screenshots/docker-ps-output.png)
 
 ### Website Live on AWS
-![Website Screenshot](website.png)
+![Website Screenshot](screenshots/website.png)
 
 ### Dockerfile Used for Build
-![Dockerfile](Dockerfile.png)
+![Dockerfile](screenshots/Dockerfile.png)
 
 - ## Cleanup & Cost Control
 
