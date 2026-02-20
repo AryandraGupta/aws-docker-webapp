@@ -28,7 +28,7 @@ This project helped me understand:
 - Networking and port mapping
 - Deployment lifecycle on AWS
 
-- ## Screenshots
+-## Screenshots
 
 ### EC2 Instance Running
 ![EC2 Dashboard](ec2-dashboard.png)
