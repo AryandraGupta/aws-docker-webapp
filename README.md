@@ -6,8 +6,6 @@
 
 This project demonstrates deploying a containerized web application on AWS using Docker and EC2.
 
-This project demonstrates deploying a containerized web application on AWS using Docker and EC2.
-
 ## Architecture
 User → Internet → AWS EC2 → Docker Container → Nginx → Website
 
