@@ -28,6 +28,20 @@ This project helped me understand:
 - Networking and port mapping
 - Deployment lifecycle on AWS
 
+- ## Screenshots
+
+### EC2 Instance Running
+![EC2 Dashboard](ec2-dashboard.png)
+
+### Docker Container Running
+![Docker PS Output](docker-ps-output.png)
+
+### Website Live on AWS
+![Website Screenshot](website.png)
+
+### Dockerfile Used for Build
+![Dockerfile](Dockerfile.png)
+
 - ## Cleanup & Cost Control
 
 To avoid unnecessary AWS charges after completing the project, all cloud resources were properly removed.
