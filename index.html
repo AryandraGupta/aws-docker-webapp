@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aryandra's Cloud Docker Project</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+      padding: 3rem 2rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+      max-width: 680px;
+      width: 90%;
+      animation: fadeUp 0.8s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0, 212, 255, 0.15);
+      border: 1px solid rgba(0, 212, 255, 0.4);
+      color: #00d4ff;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 50px;
+      margin-bottom: 1.5rem;
+    }
+
+    .badge .dot {
+      width: 8px;
+      height: 8px;
+      background: #00d4ff;
+      border-radius: 50%;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.4; transform: scale(1.4); }
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+      background: linear-gradient(90deg, #ffffff, #00d4ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p {
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+
+    .stack {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .chip {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+
+    .chip:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .chip span { font-size: 1.1rem; }
+
+    .status-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    #uptime { color: #00ff99; font-weight: 600; }
+
+    /* floating blobs */
+    .blob {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.25;
+      z-index: -1;
+      animation: drift 8s ease-in-out infinite alternate;
+    }
+
+    .blob1 { width: 400px; height: 400px; background: #00d4ff; top: -100px; left: -100px; }
+    .blob2 { width: 350px; height: 350px; background: #7f5af0; bottom: -80px; right: -80px; animation-delay: -4s; }
+
+    @keyframes drift {
+      from { transform: translate(0, 0); }
+      to   { transform: translate(30px, 30px); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+
+  <div class="container">
+    <div class="badge"><span class="dot"></span> Live on AWS EC2</div>
+
+    <h1>Hello from Aryandra's<br>Cloud Docker Project</h1>
+    <p>This site runs inside <strong style="color:#00d4ff;">Docker</strong> on <strong style="color:#ff9900;">AWS EC2</strong> —<br>containerised, deployed, and ready to scale.</p>
+
+    <div class="stack">
+      <div class="chip"><span>🐳</span> Docker</div>
+      <div class="chip"><span>☁️</span> AWS EC2</div>
+      <div class="chip"><span>🌐</span> HTML / CSS / JS</div>
+      <div class="chip"><span>🚀</span> Cloud Native</div>
+    </div>
+
+    <div class="status-bar">
+      ⬤ &nbsp;Server running &nbsp;|&nbsp; Uptime: <span id="uptime">0s</span>
+    </div>
+  </div>
+
+  <script>
+    // Live uptime counter (counts from page load)
+    let seconds = 0;
+    const uptimeEl = document.getElementById('uptime');
+
+    function formatUptime(s) {
+      const h = Math.floor(s / 3600);
+      const m = Math.floor((s % 3600) / 60);
+      const sec = s % 60;
+      if (h > 0) return `${h}h ${m}m ${sec}s`;
+      if (m > 0) return `${m}m ${sec}s`;
+      return `${sec}s`;
+    }
+
+    setInterval(() => {
+      seconds++;
+      uptimeEl.textContent = formatUptime(seconds);
+    }, 1000);
+  </script>
+
+</body>
+</html>
