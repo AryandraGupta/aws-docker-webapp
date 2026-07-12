@@ -50,11 +50,11 @@ This project helped me understand:
 
 To avoid unnecessary AWS charges after completing the project, all cloud resources were properly removed.
 
-The following steps were performed:
+The following steps were performed:-
 
 - Stopped and terminated the EC2 instance
 - Removed associated security groups if unused
 - Deleted unused key pairs and snapshots
 - Verified no running resources remained in the AWS dashboard
 
-This reflects real-world cloud practices where infrastructure is provisioned temporarily for deployment and testing, then safely decommissioned to control costs.
+This reflects real-world cloud practices where infrastructure is provisioned temporarily for deployment and testing, then safely decommissioned to control costs. 
